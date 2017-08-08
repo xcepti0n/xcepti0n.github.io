@@ -8,13 +8,42 @@
   <script src="./js/typed.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+  <script src="./js/anime.min.js"></script>
 
   <style>
+  .nav-option-container{
+		top:5rem;
+		left: -18rem;
+		width: 15rem;
+	  height: 50rem;
+	  margin: .5rem;
+	  background-color: #727272;
+	  position: fixed;
+	}
+	.nav-option{
+      border: 2px solid #000;
+      background: #FFF;
+      transition: all .4s ease;
+      color: #2980b9;
+      line-height: 60px;
+      position: relative;
+		top: 10rem;
+		margin-top: 3rem;
+		width: 22rem;
+	  height: 8rem;
+	  background-color: #525252;
+	  position:relative;
+	  display:block;
+	  border-radius: 5rem;
+	  
+	}
+	
+	
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+	  
     }
     
     /* Add a gray background color and some padding to the footer */
@@ -23,33 +52,44 @@
       padding: 25px;
     }
   </style>
+  <script>
+  function animateit(){
+  var try1 = anime.timeine();
+	try1.add({
+	  targets: '#animateit',
+	  translateY: '50vh',
+	  duration: 300,
+	  loop: false,
+	  direction: 'alternate',
+	  easing: 'easeInCubic'
+	}).add({
+	  targets: '#animateit',
+	  translateY: '50vh',
+	  translateX: '10vh',
+	  duration: 300,
+	  loop: false,
+	  easing: 'easeInCubic',
+	  offset: '-=20'
+	});
+  }
+  
+  </script>
   
 </head>
 <body>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Vaibhav</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <!-- <ul class="nav navbar-nav navbar-right"> -->
-        <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-      <!-- </ul> -->
-    </div>
-  </div>
-</nav>
+<a name="home"></a>
+<!-- <nav class="navbar navbar-inverse"> -->
+  <!-- <div class="container-fluid"> -->
+    <!-- <div class="navbar-header"> -->
+      <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> -->
+        <!-- <span class="icon-bar"></span> -->
+        <!-- <span class="icon-bar"></span> -->
+        <!-- <span class="icon-bar"></span>                         -->
+      <!-- </button> -->
+      <!-- <a class="navbar-brand" href="#">Vaibhav</a> -->
+    
+  <!-- </div> -->
+<!-- </nav> -->
 
 <div class="jumbotron">
   <div class="container text-center">
@@ -57,26 +97,18 @@
 	
   </div>
 </div>
-  
+ 
+</div>
 <div class="container-fluid bg-3 text-center">    
   <h3>This site is under maintainence!<br>Will try to complete it soon :) </h3><br>
   <div class="row">
-    <div class="col-sm-3">
+    
+	
       <p>Some text..</p>
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3"> 
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-3">
-      <p>Some text..</p>
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-    </div>
+    
+    
+    
   </div>
 </div><br>
 
@@ -85,6 +117,7 @@
   <div class="row">
     <div class="col-sm-3">
       <p>Some text..</p>
+	  <div id="animateit" ><h2>animateIT</h2></div>
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
     </div>
     <div class="col-sm-3"> 
@@ -123,6 +156,15 @@
     </div>
   </div>
 </div><br><br>
+<div class="nav-option-container navbar">
+
+<a href="#home"><button class="nav-option btn">Home</button></a>
+<a href="#about"><button class="nav-option btn">About</button></a>
+<a href="#gallery"><button class="nav-option btn">Gallery</button></a>
+<a href="#contact"><button class="nav-option btn">Contact</button></a>
+
+</div> 
+<a name="contact"></a>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
    
@@ -138,5 +180,49 @@
             });
         });
     </script>
+	<script>
+  $('.nav-option').hover(function(){
+	var navOption = $(this);
+	navOption.css('background-color', '#ff0000');
+	var option =anime.timeline();
+	option.add({
+	  targets: navOption[0],
+	  duration: 200,
+	  translateX: '15vh',
+	  easing: 'easeOutQuad',
+	  loop: false,
+	  offset: 0 
+	});
+},
+function() {
+  var navOption = $(this);
+  navOption.css('background-color', '#525252');
+  var option =anime.timeline();
+  option.add({
+		targets: '.nav-option',
+		duration: 100,
+		translateX: '0rem',
+		easing: 'linear',
+		loop: false
+  });
+
+}
+);
+	$('#animateit').click(function() {
+	var it= $('#animateit');
+	it.text(anime.easings.toString());
+  var try1 = anime.timeline();
+	anime({
+	  targets: '#animateit',
+	  translateY: '50vh',
+	  duration: 100,
+	  loop: true,
+	  direction: 'alternate',
+	  easing: 'easeInCubic'
+	});
+
+
+});
+  </script>
 </body>
 </html>
