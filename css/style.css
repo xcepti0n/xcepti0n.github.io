@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Elianto-Regular';
   src: url('./fonts/Elianto-Regular.otf') format('opentype'), /* Modern Browsers */
-       url('./fonts/Elianto-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/Elianto-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 body {
   width: 100%;
