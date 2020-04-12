@@ -14,7 +14,8 @@ $(function(){
     $("#typed-hobbies").typed({
         // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
         stringsElement: $('#typed-hobbies-strings'),
-        typeSpeed: 30,
+        typeSpeed: 20,
+        backSpeed: 1,
         backDelay: 300,
         loop: false,
         contentType: 'html', // or text
