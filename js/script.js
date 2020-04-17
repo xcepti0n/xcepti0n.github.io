@@ -21,8 +21,8 @@ $(function(){
         contentType: 'html', // or text
         // defaults to false for infinite loop
         loopCount: false,
-        callback: function(){ foo(); },
-        resetCallback: function() { newTyped(); }
+        callback: function(){},
+        resetCallback: function() {}
     });
 
     $(".reset").click(function(){
@@ -30,9 +30,9 @@ $(function(){
     });
 
 });
-function newTyped(){ /* A new typed object */ }
 
-function foo(){ console.log("Callback"); }
-
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
 
 
